@@ -1,0 +1,53 @@
+﻿<Window x:Class="SalesWPFApp.Admin.AddUpdateMember"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SalesWPFApp.Admin"
+        mc:Ignorable="d"
+        Title="AddUpdateMember" Height="420" Width="420" Loaded="Window_Loaded">
+    <Grid Background="LightBlue">
+        <StackPanel>
+            <Label HorizontalAlignment="Center" Foreground="Red" x:Name="lbTitle"
+           FontWeight="Bold" FontSize="20"/>
+            
+            <StackPanel Orientation="Horizontal" Margin="0,10" x:Name="spId" Visibility="Collapsed">
+                <Label Content="Member Id:" FontSize="14px" Width="120" />
+                <TextBox x:Name="txtMemberId" Width="270" IsReadOnly="True"
+                         Text="{Binding MemberId, Mode=TwoWay}"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,10">
+                <Label Content="Email:" FontSize="14px" Width="120" />
+                <TextBox x:Name="txtEmail" Width="270" Text="{Binding Email, Mode=TwoWay}"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,10">
+                <Label Content="Company Name:" FontSize="14px" Width="120"/>
+                <TextBox x:Name="txtCompanyName" Width="270" Text="{Binding CompanyName, Mode=TwoWay}"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,10">
+                <Label Content="City:" FontSize="14px" Width="120"/>
+                <TextBox x:Name="txtCity" Width="271" Text="{Binding City, Mode=TwoWay}"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,10">
+                <Label Content="Country:" FontSize="14px" Width="120"/>
+                <TextBox x:Name="txtCountry" Width="271" Text="{Binding Country, Mode=TwoWay}"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10" Width="200">
+                <StackPanel Width="100">
+                    <Button x:Name="btnSave" Content="Save" Width="40" Click="btnSave_Click" Margin="5,0" HorizontalAlignment="Left" Height="25"/>
+                </StackPanel>
+                <StackPanel Width="100">
+                    <Button x:Name="btnCancel" Content="Cancel" Width="40" Click="btnCancel_Click" Margin="5,0" HorizontalAlignment="Right" Height="25"/>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+
+
+    </Grid>
+
+</Window>

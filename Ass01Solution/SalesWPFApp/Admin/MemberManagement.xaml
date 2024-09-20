@@ -1,0 +1,70 @@
+﻿<Page x:Class="SalesWPFApp.Admin.MemberManagement"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SalesWPFApp.Admin"
+      mc:Ignorable="d"
+      Title="MemberManagement" Width="Auto" Height="Auto" Loaded="Page_Loaded">
+    <Grid Background="LightBlue">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="400"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0">
+            <Label Content="Member Management" HorizontalAlignment="Center" Foreground="Red" FontWeight="Bold"
+                   FontSize="20"/>
+            <TextBlock x:Name="txtId" Text="{Binding ElementName=dgMember,Path=SelectedItem.MemberId,Mode=OneWay}" Visibility="Collapsed"/>
+            <StackPanel Orientation="Horizontal" Margin="0,10">
+                <Label Content="Email:" FontSize="14px" Width="120" />
+                <TextBox x:Name="txtEmail" Width="270" Text="{Binding ElementName=dgMember, Path=SelectedItem.Email, Mode=OneWay}"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,10">
+                <Label Content="Company Name:" FontSize="14px" Width="120"/>
+                <TextBox x:Name="txtCompanyName" Width="270" Text="{Binding ElementName=dgMember, Path=SelectedItem.CompanyName, Mode=OneWay}"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,10">
+                <Label Content="City:" FontSize="14px" Width="120"/>
+                <TextBox x:Name="txtCity" Width="271" Text="{Binding ElementName=dgMember, Path=SelectedItem.City, Mode=OneWay}"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,10">
+                <Label Content="Country:" FontSize="14px" Width="120"/>
+                <TextBox x:Name="txtCountry" Width="271" Text="{Binding ElementName=dgMember, Path=SelectedItem.Country, Mode=OneWay}"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,10" HorizontalAlignment="Center">
+                <Button x:Name="btnAdd" Click="btnAdd_Click" Content="Add" Width="40" Margin="5,0"/>
+                <Button x:Name="btnEdit" Click="btnEdit_Click" Content="Edit" Width="40" Margin="5,0"/>
+                <Button x:Name="btnDel" Click="btnDel_Click" Content="Delete" Width="40" Margin="5,0"/>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" HorizontalAlignment="Center" Width="200">
+            <Label Content="Search Member" FontSize="20" FontWeight="Bold" Foreground="Red"/>
+            <StackPanel Orientation="Horizontal" Margin="0,10">
+                <Label Content="Type" Width="36"/>
+                <ComboBox x:Name="cbType" Margin="2,0">
+                    <ComboBoxItem Content="id"/>
+                    <ComboBoxItem Content="email"/>
+                </ComboBox>
+                <TextBox Background="White" x:Name="txtSearch" Width="129"/>
+            </StackPanel>
+            <Button Content="Search" x:Name="btnSearch" Click="btnSearch_Click" Width="40"
+                    HorizontalAlignment="Center"/>
+        </StackPanel>
+
+        <DataGrid x:Name="dgMember" Width="Auto" Margin="0,273,0,0" Grid.ColumnSpan="2" AutoGenerateColumns="False"
+                  >
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="*" Header="MemberId" Binding="{Binding MemberId}"/>
+                <DataGridTextColumn Width="*" Header="Email" Binding="{Binding Email}"/>
+                <DataGridTextColumn Width="*" Header="CompanyName" Binding="{Binding CompanyName}"/>
+                <DataGridTextColumn Width="*" Header="City" Binding="{Binding City}"/>
+                <DataGridTextColumn Width="*" Header="Country" Binding="{Binding Country}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

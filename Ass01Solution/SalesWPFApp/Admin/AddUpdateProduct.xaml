@@ -1,0 +1,62 @@
+﻿<Window x:Class="SalesWPFApp.Admin.AddUpdateProduct"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SalesWPFApp.Admin"
+        mc:Ignorable="d"
+        Title="AddUpdateProduct" Height="420" Width="420" Loaded="Window_Loaded">
+    <Grid Background="LightBlue">
+        <StackPanel>
+            <Label HorizontalAlignment="Center" Foreground="Red" x:Name="lbTitle"
+           FontWeight="Bold" FontSize="20"/>
+
+            <StackPanel x:Name="spId" Orientation="Horizontal" Margin="0,10">
+                <Label Content="Product Id" FontSize="14px" Width="120"/>
+                <TextBox x:Name="txtProductId" Width="270" Margin="5,0" 
+                 Text="{Binding ProductId,Mode=TwoWay}" IsReadOnly="True" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,10">
+                <Label Content="Category:" FontSize="14px" Width="120"/>
+                <ComboBox x:Name="cbCategory" Width="270" Margin="5,0"
+                  SelectedItem="{Binding Category.CategoryName,Mode=TwoWay}"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,10">
+                <Label Content="Product Name:" FontSize="14px" Width="120"/>
+                <TextBox x:Name="txtProductName" Width="270" Margin="5,0"
+                 Text="{Binding ProductName,Mode=TwoWay}"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,10">
+                <Label Content="Weight:" FontSize="14px" Width="120"/>
+                <TextBox x:Name="txtWeight" Width="271" Margin="5,0"
+                 Text="{Binding Weight,Mode=TwoWay}"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,10">
+                <Label Content="Unit Price:" FontSize="14px" Width="120"/>
+                <TextBox x:Name="txtUnitPrice" Width="271" Margin="5,0"
+                 Text="{Binding UnitPrice,Mode=TwoWay}"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,10">
+                <Label Content="Units In Stock:" FontSize="14px" Width="120"/>
+                <TextBox x:Name="txtQuantity" Width="271" Margin="5,0"
+                 Text="{Binding UnitsInStock,Mode=TwoWay}"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10" Width="200">
+                <StackPanel Width="100">
+                    <Button x:Name="btnSave" Content="Save" Width="40" Click="btnSave_Click" Margin="5,0" HorizontalAlignment="Left" Height="25"/>
+                </StackPanel>
+                <StackPanel Width="100">
+                    <Button x:Name="btnCancel" Content="Cancel" Width="40" Click="btnCancel_Click" Margin="5,0" HorizontalAlignment="Right" Height="25"/>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+
+
+    </Grid>
+</Window>

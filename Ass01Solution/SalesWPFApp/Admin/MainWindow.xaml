@@ -1,0 +1,21 @@
+﻿<Window x:Class="SalesWPFApp.Admin.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SalesWPFApp.Admin"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="Auto" Width="600" Loaded="Window_Loaded">
+    <Grid>
+        <StackPanel>
+            <Menu VerticalAlignment="Top" HorizontalAlignment="Stretch">
+                <MenuItem Header="Management" >
+                    <MenuItem Header="Product" x:Name="mnProduct" Click="mnProduct_Click"/>
+                    <MenuItem Header="Member" x:Name="mnMember" Click="mnMember_Click"/>
+                    <MenuItem Header="Order" x:Name="mnOrder" Click="mnOrder_Click"/>
+                </MenuItem>
+            </Menu>
+            <Frame x:Name="frMain" VerticalAlignment="Stretch" NavigationUIVisibility="Visible"/>
+        </StackPanel>
+    </Grid>
+</Window>
